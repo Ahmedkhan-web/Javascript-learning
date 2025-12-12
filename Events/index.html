@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20 Event Questions</title>
+<style>
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background: #f0f4f8;
+    color: #333;
+}
+
+h1, h2 {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+/* Buttons */
+button {
+    padding: 8px 15px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Inputs and Textareas */
+input, select, textarea {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 250px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #2575fc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(37,117,252,0.5);
+}
+
+/* Boxes for elements */
+.box, #previewBox, #largePreview, #modalContent, #hideMe {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Color picker preview */
+#previewBox {
+    width: 100px;
+    height: 40px;
+    background: #ddd;
+    text-align: center;
+    line-height: 40px;
+}
+
+/* Large preview image */
+#largePreview {
+    display: none;
+    width: 200px;
+    height: 100px;
+    background: #aaa;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Modal styles */
+#modal {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+#modalContent {
+    background: white;
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Dark mode */
+.dark {
+    background: #1e1e2f;
+    color: #f5f5f5;
+}
+
+/* Back to top button */
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#topBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* Misc spacing */
+p, span {
+    font-size: 0.9rem;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>Hello Events</h1>
+
+<h2>1 — Change Background</h2>
+<button id="bgButton">Change Background</button>
+
+<h2>2 — Toggle Theme</h2>
+<button id="modeBtn">Toggle Theme</button>
+
+<h2>3 — Hide Element</h2>
+<div id="hideMe" class="box">Hide me</div>
+<button id="hideBtn">Hide</button>
+
+<h2>4 — Counter</h2>
+<button id="dec">Decrease</button>
+<span id="count">0</span>
+<button id="inc">Increase</button>
+
+<h2>5 — Disable After Click</h2>
+<button id="disableBtn">Click Once</button>
+
+<h2>6 — Live Character Count</h2>
+<textarea id="charArea" rows="3"></textarea>
+<p>Characters: <span id="charCount">0</span></p>
+
+<h2>7 — Password Strength</h2>
+<input type="password" id="passwordInput" placeholder="Password">
+<p id="strength">Strength: -</p>
+
+<h2>8 — Enter to Submit</h2>
+<input id="enterInput" placeholder="Press Enter">
+
+<h2>9 — Auto Uppercase</h2>
+<input id="upperInput" placeholder="Type...">
+
+<h2>10 — Forbidden Words</h2>
+<input id="forbiddenInput">
+<button id="forbiddenBtn">Submit</button>
+<p id="forbiddenMsg"></p>
+
+<h2>11 — Dynamic Cities</h2>
+<select id="country">
+  <option value="">Select Country</option>
+  <option value="pak">Pakistan</option>
+  <option value="usa">USA</option>
+</select>
+<select id="city">
+  <option value="">Select City</option>
+</select>
+
+<h2>12 — Form Validation</h2>
+<input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+<button id="validateBtn">Validate</button>
+<p id="formMsg"></p>
+
+<h2>13 — Show/Hide Password</h2>
+<input type="password" id="passField">
+<button id="togglePass">Show</button>
+
+<h2>14 — Color Picker Preview</h2>
+<input type="color" id="colorPicker">
+<div id="previewBox">Preview</div>
+
+<h2>15 — Checkbox Agreement</h2>
+<input type="checkbox" id="agreeChk"> I Agree
+<button id="agreeBtn" disabled>Submit</button>
+
+<h2>16 — Hover Image Preview</h2>
+<img id="thumb" src="https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg">
+<div id="largePreview">Big Preview</div>
+
+<h2>17 — Back to Top</h2>
+<p style="height:400px;">Scroll down to see the button...</p>
+<button id="topBtn">Back To Top</button>
+
+<h2>18 — Auto Save Form</h2>
+<input id="autoSave" placeholder="Type something">
+
+<h2>19 — Click Outside Modal</h2>
+<button id="openModal">Open Modal</button>
+<div id="modal">
+  <div id="modalContent">This is modal box</div>
+</div>
+
+<h2>20 — Key Logger</h2>
+<p>Keys: <span id="keyLog"></span></p>
+
+<script src="./Event.js"></script>
+</body>
+</html>
