@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    background: #f0f0f0;     /* optional soft background */
+    font-family: 'Poppins', sans-serif;
+}
+
+.todo-App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 300px;           /* narrower */
+    min-height: 450px;      /* taller */
+    padding: 40px 20px;     /* smaller padding for width balance */
+    
+    border-radius: 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* optional modern shadow */
+}
+.todo-App h1 {
+    font-size: 3rem;        /* size of text */
+    font-weight: 700;       /* optional bold */
+    color: #fff;            /* looks good on gradient */
+    margin-bottom: 20px;    /* space below the heading */
+    text-align: center;     /* center inside app */
+}
+

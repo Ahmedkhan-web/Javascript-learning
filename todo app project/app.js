@@ -1,20 +1,32 @@
-const input = document.querySelector("#input")
-const ol = document.querySelector("#ol")
+const input = document.getElementById("input");
+const div = document.getElementById("div");
+const form = document.getElementById("form");
 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-input.innerHTML = [];
+  div.innerHTML += `
+    <div class="item">
+      <h2>${input.value}</h2>
+      <button type="button" onclick="editItem(this)">Edit</button>
+      <button type="button" onclick="deleteItem(this)">Delete</button>
+    </div>
+  `;
 
+  input.value = "";
+});
 
-function todorender() {
-  for (let i = 0; i < input.innerHTML.length; i++)
-ol.innerHTML = `<li>${input.innerHTML[i]}
-      <button>delet</button>
-      <button>edit</button>
-  </li>`
+function deleteItem(btn) {
+  btn.parentElement.remove();
 }
 
+function editItem(btn){
+  const h2 = btn.parentElement.querySelector("h2");
 
+  const oldText = h2.textContent;
 
+  const newText = prompt("Edit text:" , oldText);
 
-
-todorender();
+  if (newText === null || newText.trim() === "") return;
+  h2.textContent = newText;
+}
