@@ -98,6 +98,23 @@ console.log(notifications)
 
 
 
+// 11
+let num = [10 , 20 , 30 , 40 , 50];
+console.log(num.join(","));
+
+
+
+
+
+
+
+// 12
+let cit = ["Quetta" , "Peshawar" , "Kabul" , "Swat"];
+console.log(cit.join("|"))
+
+
+
+
 
 
 
