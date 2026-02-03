@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Admin Panel</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Admin Penal</h1>
-    <form id="form">
-        <input type="name" id="in-name" placeholder="Name">
-        <select name="Select Role" id="role" id="Select Role">
-            <option value="Select Role"> Select Role</option>
-            <option value="Admin">Admin</option>
-            <option value="Editer">Editer</option>
-            <option value="User">User</option>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h1>User Panel</h1>
+
+      <form id="form" class="form">
+        <input type="text" id="in-name" placeholder="Enter full name">
+
+        <select id="role">
+          <option value="Select Role">Select role</option>
+          <option value="Admin">Admin</option>
+          <option value="Editer">Editor</option>
+          <option value="User">User</option>
         </select>
+
         <button id="button">Add User</button>
-    </form>
-    <div id="dev-admin"></div>
-    <div id="dev-editer"></div>
-    <div id="dev-user"></div>
-    <script src="admin.js"></script>
+      </form>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+      <section class="card">
+        <h2>Admins</h2>
+        <div id="dev-admin"></div>
+      </section>
+
+      <section class="card">
+        <h2>Editors</h2>
+        <div id="dev-editer"></div>
+      </section>
+
+      <section class="card">
+        <h2>Users</h2>
+        <div id="dev-user"></div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="admin.js"></script>
 </body>
 </html>
